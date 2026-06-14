@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Smooth Scrolling*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*Fade up animation*/
+@layer utilities {
+    .fade-up {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.in-view {
+         opacity: 1;
+         transform: translateY(0);
+    }
+
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+    .fade-up-delay-4 { transition-delay: 0.4s; }
+    .fade-up-delay-5 { transition-delay: 0.5s; }
+    .fade-up-delay-6 { transition-delay: 0.6s; }
+
+}

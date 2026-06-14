@@ -1,3 +1,5 @@
+import useInView from "../hooks/useInView";
+
 const reasons = [
   {
     icon: (
