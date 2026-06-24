@@ -30,18 +30,33 @@ export default function ContactForm() {
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
   };
  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = validate();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  const newErrors = validate();
+  if (Object.keys(newErrors).length > 0) {
+    setErrors(newErrors);
+    return;
+  }
+
+  try {
+    const response = await fetch("http://localhost:8000/api/enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setSubmitted(true);
+      setFormData(initialState);
+    } else {
+      alert("Something went wrong. Please try again.");
     }
-    // Frontend only for now — backend wiring in Day 6
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setFormData(initialState);
-  };
+  } catch (error) {
+    alert("Cannot connect to server. Please try again later.");
+  }
+};
  
   const inputClass = (field) =>
     `w-full px-4 py-3 rounded-xl border text-sm text-gray-700 bg-white outline-none transition-all duration-200 focus:ring-2 focus:ring-[#c9a84c]/30 focus:border-[#c9a84c] ${
