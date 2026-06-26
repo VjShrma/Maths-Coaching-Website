@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const Enquiry = require("../models/Enquiry");
+const authMiddleware = require("../middleware/authMiddleware");
  
 // POST /api/enquiry — save new enquiry
 router.post("/", async (req, res) => {
@@ -36,7 +37,7 @@ router.post("/", async (req, res) => {
 });
  
 // GET /api/enquiry — view all enquiries (admin use)
-router.get("/", async (req, res) => {
+router.get("/", authMiddleware, async (req, res) => {
   try {
     const enquiries = await Enquiry.find().sort({ createdAt: -1 });
     res.json({ success: true, count: enquiries.length, data: enquiries });
