@@ -31,6 +31,14 @@ mongoose
     app.listen(PORT, () => {
       console.log(`✅ Server running on http://localhost:${PORT}`);
     });
+
+    // Add this after app.listen block
+const https = require("https");
+setInterval(() => {
+  https.get("https://maths-coaching-backend.onrender.com", (res) => {
+    console.log("Server kept alive:", res.statusCode);
+  }).on("error", () => {});
+}, 14 * 60 * 1000);
   })
   .catch((err) => {
     console.error("❌ MongoDB connection failed:", err.message);
