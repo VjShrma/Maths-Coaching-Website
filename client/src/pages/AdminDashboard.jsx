@@ -7,7 +7,7 @@ export default function AdminDashboard() {
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    useEffect(() => {
+   useEffect(() => {
   const token = localStorage.getItem("adminToken");
   if (!token) {
     navigate("/admin");
