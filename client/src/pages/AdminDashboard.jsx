@@ -8,14 +8,14 @@ export default function AdminDashboard() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const token = localStorage.getItem("adminToken");
-        if (!token) {
-            navigate("/admin");
-            return;
-        }
-
-        fetchEnquiries(token);
-    }, []);
+  const token = localStorage.getItem("adminToken");
+  if (!token) {
+    navigate("/admin");
+    return;
+  }
+  fetchEnquiries(token);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
     const fetchEnquiries = async (token) => {
   try {

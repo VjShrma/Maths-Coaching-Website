@@ -1,3 +1,4 @@
+// eslist-disable-next-line no-unused-vars
 import useInView from "../hooks/useInView";
 
 const reasons = [
