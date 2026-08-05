@@ -39,7 +39,7 @@ export default function ContactForm() {
   }
 
   try {
-    const response = await fetch("http://localhost:8000/api/enquiry", {
+   const response = await fetch("https://maths-coaching-backend.onrender.com/api/enquiry",  {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

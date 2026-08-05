@@ -19,7 +19,7 @@ export default function AdminDashboard() {
 
     const fetchEnquiries = async (token) => {
   try {
-    const response = await fetch("http://localhost:8000/api/enquiry", {
+    const response = await fetch("https://maths-coaching-backend.onrender.com/api/enquiry", {
       headers: { Authorization: `Bearer ${token}` },
     });
 
