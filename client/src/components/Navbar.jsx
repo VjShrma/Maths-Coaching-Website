@@ -1,16 +1,33 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home",    to: "/" },
-  { label: "Courses", to: "/courses" },
-  { label: "About",   to: "/about" },
-  { label: "Contact", to: "/contact" },
+  { label: "Home",    href: "#hero" },
+  { label: "Courses", href: "#courses" },
+  { label: "About",   href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setOpen(false);
+
+    // If not on home page, go home first then scroll
+    if (window.location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav className="bg-[#0a1628] border-b-[3px] border-[#c9a84c] sticky top-0 z-50">
@@ -19,7 +36,7 @@ export default function Navbar() {
         {/* Brand */}
         <Link to="/" className="flex flex-col leading-tight" onClick={() => setOpen(false)}>
           <span className="text-[#c9a84c] font-bold text-lg tracking-wide font-serif">
-            Vijay Sharma
+            Arun Sharma
           </span>
           <span className="text-[#7a9bbf] text-[0.65rem] tracking-widest uppercase">
             Maths Coaching · Class 7–12
@@ -28,18 +45,15 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <ul className="hidden md:flex gap-8 list-none m-0 p-0">
-          {navLinks.map(({ label, to }) => (
+          {navLinks.map(({ label, href }) => (
             <li key={label}>
-              <Link
-                to={to}
-                className={`text-sm font-semibold tracking-wide transition-colors duration-200 pb-0.5 border-b-2 ${
-                  pathname === to
-                    ? "text-[#c9a84c] border-[#c9a84c]"
-                    : "text-gray-200 border-transparent hover:text-[#c9a84c] hover:border-[#c9a84c]"
-                }`}
+              <a
+                href={href}
+                onClick={(e) => handleNavClick(e, href)}
+                className="text-sm font-semibold tracking-wide transition-colors duration-200 pb-0.5 border-b-2 text-gray-200 border-transparent hover:text-[#c9a84c] hover:border-[#c9a84c] cursor-pointer"
               >
                 {label}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -69,17 +83,15 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-[#0e1f3a] border-t border-[#1e3a5f] px-6 pb-4 pt-2">
-          {navLinks.map(({ label, to }) => (
-            <Link
+          {navLinks.map(({ label, href }) => (
+            <a
               key={label}
-              to={to}
-              onClick={() => setOpen(false)}
-              className={`block py-3 border-b border-[#1e3a5f] text-sm font-semibold tracking-wide ${
-                pathname === to ? "text-[#c9a84c]" : "text-gray-200"
-              }`}
+              href={href}
+              onClick={(e) => handleNavClick(e, href)}
+              className="block py-3 border-b border-[#1e3a5f] text-sm font-semibold tracking-wide text-gray-200 hover:text-[#c9a84c] cursor-pointer"
             >
               {label}
-            </Link>
+            </a>
           ))}
           <a
             href="https://wa.me/919XXXXXXXXX"

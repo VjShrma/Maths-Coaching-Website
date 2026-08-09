@@ -67,6 +67,10 @@ const reasons = [
 export default function WhyChooseUs() {
   return (
     <section className="bg-white py-24 px-6">
+   
+   {/* Added id attribute for About section */}
+      <section id="about" className="bg-white py-24 px-6"></section>
+
       <div className="max-w-7xl mx-auto">
  
         {/* Section header */}
