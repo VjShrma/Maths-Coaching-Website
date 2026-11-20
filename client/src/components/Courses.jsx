@@ -197,7 +197,7 @@ export default function Courses() {
  
         {/* Bottom note */}
         <p className="text-center text-gray-400 text-sm mt-10">
-          All batches include weekly doubt sessions + monthly progress reports.
+           Every class ends with a doubt-clearing round, with regular tests and monthly progress reports.
           <span className="text-[#c9a84c] font-semibold"> First trial class is free.</span>
         </p>
  

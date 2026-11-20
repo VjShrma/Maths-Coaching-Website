@@ -5,6 +5,7 @@ require("dotenv").config();
 
 const enquiryRoutes = require("./routes/enquiry");
 const authRoutes = require("./routes/auth");
+const feedbackRoutes = require("./routes/feedbackRoutes")
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use("/api/enquiry", enquiryRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/feedback", feedbackRoutes);
 
 app.post("/test", (req, res) => {
   res.json({ message: "test works" });

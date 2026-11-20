@@ -2,7 +2,8 @@ import Hero from "../components/Hero";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Courses from "../components/Courses";
 import Testimonials from "../components/Testimonials";
-import ContactForm from "../components/ContactForm";
+import ContactSection from "../components/ContactSection";
+import FeedbackForm from "../components/FeedbackForm";
 import Footer from "../components/Footer";
  
 export default function Home() {
@@ -13,7 +14,8 @@ export default function Home() {
       {/* More sections come in Day 3 and 4 */}
       <Courses />
       <Testimonials />
-      <ContactForm />
+      <ContactSection />
+      <FeedbackForm />
       <Footer />
     </main>
   );

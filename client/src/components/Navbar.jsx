@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CONTACT } from "../config/contact";
 import { Link, useNavigate } from "react-router-dom";
 
 const navLinks = [
@@ -58,14 +59,12 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* WhatsApp CTA */}
+        {/* CALL CTA */}
         <a
-          href="https://wa.me/919XXXXXXXXX"
-          target="_blank"
-          rel="noreferrer"
-          className="hidden md:flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white text-sm font-bold px-4 py-2 rounded-md transition-colors duration-200"
+           href={`tel:${CONTACT.phoneTel}`}
+           className="hidden md:flex items-center gap-2 bg-[#c9a84c] hover:bg-[#b8962f] text-[#0a1f44] text-sm font-bold px-4 py-2 rounded-md transition-colors duration-200"
         >
-          📲 WhatsApp
+           Call Now
         </a>
 
         {/* Hamburger */}
@@ -93,14 +92,12 @@ export default function Navbar() {
               {label}
             </a>
           ))}
-          <a
-            href="https://wa.me/919XXXXXXXXX"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-4 block text-center bg-[#25D366] text-white font-bold py-2.5 rounded-md"
+         <a
+              href={`tel:${CONTACT.phoneTel}`}
+              className="mt-4 block text-center bg-[#c9a84c] text-[#0a1f44] font-bold py-2.5 rounded-md"
           >
-            📲 WhatsApp Us
-          </a>
+              Call Now
+         </a>
         </div>
       )}
     </nav>

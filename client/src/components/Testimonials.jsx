@@ -19,7 +19,7 @@ const testimonials = [
     role: "Parent of Class 9 student",
     board: "ICSE",
     rating: 5,
-    text: "We tried two other tutors before this. The difference is night and day. Small batch size means my child actually gets attention. Doubt sessions on Saturdays are a brilliant idea.",
+    text: "We tried two other tutors before this. The difference is night and day. The one-on-one attention means my child actually understands each topic, and doubts get cleared at the end of every class.",
   },
   {
     name: "Amit Sharma",

@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import About from "./pages/About";
@@ -20,9 +19,6 @@ function App() {
         <Route path="/admin"   element={<AdminLogin/>} />
         <Route path="/admin/dashboard" element={<AdminDashboard/>} />
       </Routes>
-
-       {/* Floating WhatsApp button — visible on every page */}
-      <WhatsAppButton />
 
     </Router>
   );
