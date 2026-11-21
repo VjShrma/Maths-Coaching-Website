@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { CONTACT } from "../config/contact";
 import { Link, useNavigate } from "react-router-dom";
 
 const navLinks = [
@@ -59,14 +58,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CALL CTA */}
-        <a
-           href={`tel:${CONTACT.phoneTel}`}
-           className="hidden md:flex items-center gap-2 bg-[#c9a84c] hover:bg-[#b8962f] text-[#0a1f44] text-sm font-bold px-4 py-2 rounded-md transition-colors duration-200"
-        >
-           Call Now
-        </a>
-
         {/* Hamburger */}
         <button
           onClick={() => setOpen(!open)}
@@ -92,12 +83,6 @@ export default function Navbar() {
               {label}
             </a>
           ))}
-         <a
-              href={`tel:${CONTACT.phoneTel}`}
-              className="mt-4 block text-center bg-[#c9a84c] text-[#0a1f44] font-bold py-2.5 rounded-md"
-          >
-              Call Now
-         </a>
         </div>
       )}
     </nav>

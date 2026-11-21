@@ -1,4 +1,3 @@
-import { CONTACT } from "../config/contact";
 export default function Hero() {
  
   return (
@@ -18,7 +17,7 @@ export default function Hero() {
  
           <div className="inline-flex items-center gap-2 bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] text-sm font-semibold px-4 py-2 rounded-full mb-6 tracking-wide">
             <span className="w-2 h-2 bg-[#c9a84c] rounded-full animate-pulse" />
-            15+ Years of Teaching Excellence
+            25+ Years of Teaching Excellence
           </div>
  
           <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mb-4">
@@ -27,7 +26,7 @@ export default function Hero() {
           </h1>
  
           <h2 className="text-2xl md:text-3xl font-light text-blue-200 mb-6">
-            — Arun Kumar Sharma
+            — Arun Sharma
           </h2>
  
           <p className="text-blue-100/80 text-lg leading-relaxed mb-4 max-w-lg">
@@ -48,23 +47,11 @@ export default function Hero() {
             ))}
           </ul>
  
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={ "tel:" +CONTACT.phoneTel}
-              className="inline-flex items-center justify-center gap-3 bg-[#c9a84c] hover:bg-[#b8962f] text-[#0a1f44] font-bold px-8 py-4 rounded-xl text-base transition-all duration-200 shadow-lg hover:-translate-y-0.5"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
-              </svg>
-              Call Now
-            </a>
-          </div>
- 
           <div className="flex flex-wrap gap-6 mt-12 pt-8 border-t border-white/10">
             {[
               { number: "500+", label: "Students Taught" },
-              { number: "98%", label: "Pass Rate" },
-              { number: "15+", label: "Years Experience" },
+              { number: "100%", label: "Pass Rate" },
+              { number: "25+", label: "Years Experience" },
             ].map(({ number, label }) => (
               <div key={label}>
                 <div className="text-2xl font-bold text-[#c9a84c]">{number}</div>
@@ -86,13 +73,10 @@ export default function Hero() {
             <p className="text-[#c9a84c] font-bold text-lg">Arun Kumar Sharma</p>
             <p className="text-blue-200/60 text-sm mt-1">M.Sc. Mathematics</p>
             <p className="text-blue-200/50 text-xs mt-1">Delhi University</p>
-            <div className="mt-6 bg-[#c9a84c]/10 border border-[#c9a84c]/20 rounded-xl px-4 py-3">
-              <p className="text-[#c9a84c] text-xs font-semibold uppercase tracking-wider">Replace with your photo</p>
+            {/*/<div className="mt-6 bg-[#c9a84c]/10 border border-[#c9a84c]/20 rounded-xl px-4 py-3">} */}
             </div>
           </div>
         </div>
- 
-      </div>
  
       {/* Bottom wave */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none">

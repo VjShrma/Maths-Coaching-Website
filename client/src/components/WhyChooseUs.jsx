@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+import { whatsappLink } from "../config/contact";
 import useInView from "../hooks/useInView";
 
 const reasons = [
@@ -44,6 +44,14 @@ const reasons = [
       "Hundreds of students have gone from struggling to scoring 90+ marks — track record speaks for itself.",
   },
 ];
+
+const ONLINE_MESSAGE = [
+  "Hello! I'd like to enquire about online maths classes for my child.",
+  "",
+  "City and Country:",
+  "Class or Grade:",
+  "School board and Curriculum:",
+].join("\n");
  
 export default function WhyChooseUs() {
   return (
@@ -96,16 +104,21 @@ export default function WhyChooseUs() {
  
         {/* Bottom CTA strip */}
         <div className="mt-16 bg-[#0a1f44] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6 text-white">
-          <div>
-            <h3 className="text-2xl font-bold mb-2"> Call the tutor to book a trial class.</h3>
-          </div>
+       <div>
+            <h3 className="text-2xl font-bold mb-2">Not in Chandigarh? Learn online.</h3>
+            <p className="text-blue-200/70">
+                  Students across India and abroad can enquire about live online classes on WhatsApp.
+            </p>
+       </div>
           <a
-            href="#contact"
-            className="flex-shrink-0 bg-[#c9a84c] hover:bg-[#b8962f] text-[#0a1f44] font-bold px-8 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg hover:shadow-[#c9a84c]/30 hover:shadow-xl whitespace-nowrap"
+            href={whatsappLink(ONLINE_MESSAGE)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-8 py-4 rounded-xl transition-colors duration-200 whitespace-nowrap"
           >
-            Contact the tutor to book a trial class. →
+            Enquire on WhatsApp
           </a>
-        </div>
+       </div>
  
       </div>
     </section>
