@@ -1,5 +1,4 @@
 import { whatsappLink } from "../config/contact";
-import useInView from "../hooks/useInView";
 
 const reasons = [
   {
